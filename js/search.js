@@ -30,7 +30,7 @@ const search = function() {
     };
     
     const getData = (value) => {        
-        fetch('/db/db.json')
+        fetch('https://test-9b0a7-default-rtdb.europe-west1.firebasedatabase.app/db.json')
         .then((res) => res.json())
         .then((data) => {
 
