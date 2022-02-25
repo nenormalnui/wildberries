@@ -30,7 +30,7 @@ const getGoods = () => {
     }
 
     const getData = (value, category) => {
-        fetch('https://test-9b0a7-default-rtdb.europe-west1.firebasedatabase.app/db.json') 
+        fetch('/db/db.json') 
         .then((res) => res.json())
         .then((data) => {
             const array = category ? data.filter((item) => item[category] === value) : data;
