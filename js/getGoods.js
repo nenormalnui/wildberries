@@ -36,8 +36,8 @@ const getGoods = () => {
             
             localStorage.setItem('goods', JSON.stringify(array));
 
-            if (window.location.pathname !== "/wildberriesjs/goods.html") {
-                window.location.href = '/wildberriesjs/goods.html';
+            if (window.location.pathname !== "/goods.html") {
+                window.location.href = '/goods.html';
             } else {
                 renderGoods(array);
             }            
@@ -53,7 +53,7 @@ const getGoods = () => {
         });
     });
 
-    if (localStorage.getItem('goods') && window.location.pathname === "/wildberriesjs/goods.html") {
+    if (localStorage.getItem('goods') && window.location.pathname === "/goods.html") {
         renderGoods(JSON.parse(localStorage.getItem('goods')));
     }
 };
