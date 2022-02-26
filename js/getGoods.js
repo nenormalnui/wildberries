@@ -1,5 +1,6 @@
 const getGoods = () => {
     const links = document.querySelectorAll('.navigation-link');
+    const viewAll = document.querySelectorAll('.more');
 
     const renderGoods = (goods) => {
         const goodsContainer = document.querySelector('.long-goods-list');
@@ -52,6 +53,18 @@ const getGoods = () => {
             getData(linkValue, category);
         });
     });
+
+
+        viewAll.forEach((link) => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault(); 
+
+            const linkValue = link.textContent;
+            const category = link.dataset.field;
+
+            getData(linkValue, category);
+        })
+    })
 
     if (localStorage.getItem('goods') && window.location.pathname === "/wildberries/goods.html") {
         renderGoods(JSON.parse(localStorage.getItem('goods')));
